@@ -20,8 +20,10 @@ Route::get('/login', function (){
     return view('login');
 });
 
-Route::post('/login', [UserController::class,'login']);
-Route::get('/', [ProductController::class,'index']);
+Route::post("/login", [UserController::class,"login"]);
+Route::get("/", [ProductController::class,"index"]);
+Route::get("detail/{id}", [ProductController::class,"details"]);
+Route::get("/search", [ProductController::class,"search"]);
 
 
 // Route::get('/', function () {
