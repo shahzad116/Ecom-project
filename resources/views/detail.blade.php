@@ -11,7 +11,13 @@
                 <h5 style="color:#337ab7"><a href="#">{{ $products['category'] }}</a> </h5>
 
                 <!-- Precios -->
-                <a href=""><button>Add to Cart</button></a>
+                <form action="/add_to_cart" method="post">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $products['id'] }}" />
+                    <button>Add to Cart</button>
+                </form>
+
+
                 <a href=""><button>Buy Now</button></a>
                 <h6 class="title-price"><small>price</small></h6>
                 <h3 style="margin-top:0px;">AED{{ $products['price'] }}</h3>
